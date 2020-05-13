@@ -1,0 +1,26 @@
+---
+- name: Check the temperature
+  delegate_to: localhost
+  uri:
+    url: https://api.openweathermap.org/data/2.5/weather?id={{ city_id }}&appid={{ weather_api_key }}
+    method: GET
+    status_code: 200
+  register: weather
+
+- name: Convert Kelvin temperature to F
+  set_fact:
+    city_is_hot: "{{ (weather.json.main.temp - 273.15) * 9/5 + 32 >= 75 }}"
+
+- name: Copy cold weather app
+  become: yes
+  copy:
+    src: cold_app.html
+    dest: /usr/share/nginx/html/index.html
+  when: not city_is_hot
+
+- name: Copy hot weather app
+  become: yes
+  copy:
+    src: hot_app.html
+    dest: /usr/share/nginx/html/index.html
+  when: city_is_hot

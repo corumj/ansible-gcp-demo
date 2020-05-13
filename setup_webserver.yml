@@ -1,0 +1,15 @@
+---
+- name: Setup a simple web server on the GCP Instance
+  hosts: all
+  connection: ssh
+  gather_facts: False
+  vars:
+    ansible_user: "{{ lookup('env', 'GCP_ANSIBLE_SA') }}" 
+    terraria_server_version: 1353 #enter this without the dots
+    terraria_server_filename: terraria-server-{{ terraria_server_version }}.zip
+    terraria_server_url: "http://terraria.org/server/{{ terraria_server_filename }}"
+    terraria_worldname: betrayal
+    desired_state: present
+    gcp_label: test-label
+  roles:
+    - web_server
