@@ -2,6 +2,8 @@
 gcp_project: terraria-usp
 gcp_cred_kind: serviceaccount
 gcp_cred_file: "{{ lookup('env', 'GCP_SERVICE_ACCT_FILE') }}"
+gcp_source_image: 'projects/centos-cloud/global/images/centos-8-v20200504'
+gcp_disk_size_gb: 50
 gpc_object_name_prefix: terraria
 zone: "us-west1-a"
 region: "us-west1"

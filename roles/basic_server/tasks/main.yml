@@ -1,17 +1,17 @@
 ---
-- name: create a disk
-  google.cloud.gcp_compute_disk:
-      name: '{{ gpc_object_name_prefix }}-disk-instance'
-      size_gb: 50
-      source_image: 'projects/centos-cloud/global/images/centos-8-v20200504'
-      zone: "{{ zone }}"
-      project: "{{ gcp_project }}"
-      auth_kind: "{{ gcp_cred_kind }}"
-      service_account_file: "{{ gcp_cred_file }}"
-      scopes:
-        - https://www.googleapis.com/auth/compute
-      state: "{{ desired_state }}"
-  register: disk
+# - name: create a disk
+#   google.cloud.gcp_compute_disk:
+#       name: '{{ gpc_object_name_prefix }}-disk-instance'
+#       size_gb: 50
+#       source_image: 'projects/centos-cloud/global/images/centos-8-v20200504'
+#       zone: "{{ zone }}"
+#       project: "{{ gcp_project }}"
+#       auth_kind: "{{ gcp_cred_kind }}"
+#       service_account_file: "{{ gcp_cred_file }}"
+#       scopes:
+#         - https://www.googleapis.com/auth/compute
+#       state: "{{ desired_state }}"
+#   register: disk
 
 - name: create a network
   google.cloud.gcp_compute_network:
@@ -57,9 +57,10 @@
       disks:
         - auto_delete: true
           boot: true
-          source: "{{ disk }}"
-      labels:
-        game: "{{ gcp_label }}"
+          device_name: device1
+          initialize_params:
+            disk_size_gb: "{{ gcp_disk_size_gb }}"
+            source_image: "{{ gcp_source_image }}"
       network_interfaces:
           - network: "{{ network }}"
             access_configs:

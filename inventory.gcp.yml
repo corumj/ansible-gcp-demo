@@ -3,7 +3,5 @@ projects:
   - terraria-usp
 keyed_groups:
   - key: label
-groups:
-  terraria: "'terraria' in name"
 auth_kind: serviceaccount
-service_account_file: "{{ lookup('env', 'GCP_SERVICE_ACCT_FILE') }}"
+service_account_file: /Users/jcorum/.gcp/gcp-key-ansible-sa.json
