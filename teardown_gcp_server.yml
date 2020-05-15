@@ -5,4 +5,4 @@
   roles:
     - role: gcp_basic_server
       vars:
-        teardown: False
+        teardown: True

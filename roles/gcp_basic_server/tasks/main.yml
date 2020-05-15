@@ -1,0 +1,9 @@
+---
+- include_tasks: teardown.yml
+  when: teardown
+
+- name: provision instance in GCP public cloud
+  block:
+    - name: provision GCP resource and instance
+      include_tasks: provision.yml
+  when: not teardown
