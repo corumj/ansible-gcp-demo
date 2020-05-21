@@ -1,0 +1,3 @@
+someMaps = (function(){
+  return
+}());

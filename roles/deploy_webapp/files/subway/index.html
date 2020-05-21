@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Subway Map</title>
+  <meta name="description" content="Some experimental maps">
+  <meta name="Jerry P" content="maps">
+
+  <!-- Library CSS  -->
+
+
+   <!-- App CSS  -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <!-- Library JavaScript  -->
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="js/d3-tube-map.min.js"></script>
+
+  <!-- App JavaScript  -->
+  <script src="js/app.js"></script>
+  <script src="js/app.shell.js"></script>
+
+</head>
+
+<body>
+  <div id="appDiv"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      app.initModule();
+    });
+  </script>
+</body>
+</html>

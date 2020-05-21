@@ -4,9 +4,8 @@
   gather_facts: no
   vars:
     weather_api_key: "{{ lookup('env', 'WEATHER_API_KEY') }}" 
-    city_id: 5308655 # for Reykjavik, Iceland, id 3413829, for Phoenix, AZ, id 5308655
+    city_id: 3413829 # for Reykjavik, Iceland, id 3413829, for Phoenix, AZ, id 5308655
     ansible_user: "{{ lookup('env', 'GCP_ANSIBLE_SA') }}"  
     desired_state: present    
   roles:
-    - web_server
     - deploy_webapp
