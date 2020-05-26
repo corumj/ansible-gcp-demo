@@ -9,24 +9,15 @@
   <meta name="Jerry P" content="maps">
 
   <!-- Library CSS  -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
+
 
    <!-- App CSS  -->
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <!-- Library JavaScript  -->
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
-
-  <script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js"
-  integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="
-  crossorigin=""></script>
-
-  <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
   <!-- App JavaScript  -->
   <script src="js/someMaps.js"></script>
@@ -35,7 +26,6 @@
 </head>
 
 <body>
-  <div id="someMap"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       someMaps.initModule();

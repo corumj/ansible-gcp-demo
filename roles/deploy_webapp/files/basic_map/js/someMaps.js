@@ -1,12 +1,19 @@
-var someMaps = (function(){
-
-  var initModule = function() {
+var someMaps = (() => {
+  // Initialize the app and trigger initialization of data and shell modules
+  var initModule = async () => {
     console.log("someMaps initialized.");
-    someMaps.shell.initModule();
-    someMaps.data.initModule();
+    let dataModule = await someMaps.data.initModule()
+      .then((msg) => {
+        console.log(msg);
+        return someMaps.shell.initModule()
+      })
+      .then((msg) => {
+        console.log(msg);
+      });
+    
   }
 
   return {
     initModule: initModule
   }
-}());
+})();

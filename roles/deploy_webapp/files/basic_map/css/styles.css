@@ -1,12 +1,14 @@
-body {
-  margin: 0;
-  padding: 0;
+path {
+  fill: lightgray;
+  stroke: #000;
 }
-#someMap {
-  height: 400px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+.graticule {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: .5px;
+}
+.foreground {
+  fill: none;
+  stroke: #333;
+  stroke-width: 1.5px;
 }
