@@ -4,7 +4,7 @@ gcp_cred_kind: serviceaccount
 gcp_cred_file: "{{ lookup('env', 'GCP_SERVICE_ACCT_FILE') }}"
 gcp_source_image: 'projects/centos-cloud/global/images/centos-8-v20200504'
 gcp_disk_size_gb: 50
-gcp_object_name_prefix: cps
+gcp_object_name_prefix: california
 gcp_network_name: "{{ gcp_object_name_prefix }}-network-demo"
 gcp_address_name: "{{ gcp_object_name_prefix }}-address-demo"
 gpc_firewall_name: "{{ gcp_object_name_prefix }}-firewall-demo"
