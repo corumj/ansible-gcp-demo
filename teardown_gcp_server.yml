@@ -1,5 +1,5 @@
 ---
-- name: Create a storage, networking, firewall rules and server in GCP
+- name: Teardown storage, networking, firewall rules and server in GCP
   hosts: localhost
   gather_facts: False
   roles:
